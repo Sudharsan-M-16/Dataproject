@@ -61,8 +61,6 @@ def runarima(series, name, order=(5,1,2), forecast_days=50):
     plt.title(f"{name} Forecast")
     plt.legend()
     plt.show()
-    
-    return forecast_df
 
 
 sensexforecast = runarima(sensex, "Sensex")
