@@ -46,6 +46,7 @@ plotma(gold_ma, "Gold (MA)")
 plotma(oil_ma, "Crude Oil (MA)")
 
 def runarima(series, name, order=(5,1,2), forecast_days=200):
+    series = series.asfreq('B').ffill().bfill()
     model = ARIMA(series, order=order)
     res = model.fit()
     
@@ -63,6 +64,7 @@ def runarima(series, name, order=(5,1,2), forecast_days=200):
     plt.show()
 
 
-sensexforecast = runarima(sensex, "Sensex",(1,1,1))
-goldforecast = runarima(gold, "Gold",(1,1,1))
-oilforecast = runarima(oil, "Crude Oil",(0,1,1))
+sensexforecast = runarima(sensex, "Sensex",(2,1,2))
+goldforecast   = runarima(gold, "Gold",(5,2,0))
+oilforecast    = runarima(oil, "Crude Oil",(1,1,1))
+
