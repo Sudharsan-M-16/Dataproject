@@ -63,6 +63,6 @@ def runarima(series, name, order=(5,1,2), forecast_days=200):
     plt.show()
 
 
-sensexforecast = runarima(sensex, "Sensex")
-goldforecast = runarima(gold, "Gold")
-oilforecast = runarima(oil, "Crude Oil")
+sensexforecast = runarima(sensex, "Sensex",(1,1,1))
+goldforecast = runarima(gold, "Gold",(1,1,1))
+oilforecast = runarima(oil, "Crude Oil",(0,1,1))
